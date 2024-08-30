@@ -29,6 +29,7 @@ jobs:
             chmod 764 $WORKLOAD_MANIFEST_DIR/*
             dotnet workload search
             dotnet workload install gtk --skip-manifest-update
+            dotnet tool restore
       - name: Build MAUI
         run: |
             sed -i 's/_IncludeAndroid>true/_IncludeAndroid>/g' Directory.Build.Override.props
