@@ -34,7 +34,7 @@ jobs:
             sed -i 's/_IncludeAndroid>true/_IncludeAndroid>/g' Directory.Build.Override.props
             dotnet build Microsoft.Maui.BuildTasks.slnf
             dotnet build Microsoft.Maui.Gtk.slnf
-
+            dotnet cake --target=dotnet-pack --workloads=global --gtk
   dotnet-format:
     needs: build_and_test
     runs-on: ubuntu-22.04
